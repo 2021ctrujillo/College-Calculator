@@ -29,20 +29,20 @@ def iterate(school, ACTscore, SATscore, GPA, testtype):
         if item.school == school:
             if testtype == "SAT":
                 if item.SATscore <= SATscore:
-                    return ("Great job! You score among the average "+ item.school + " students!")
+                    return ("Great job! Your SAT score is among the average "+ str(item.school) + " students!")
                 elif item.SATscore > SATscore:
-                    return ("You might want to improve your test score. The school average is " + x + " points higher.")
+                    return ("You might want to improve your SAT score. The " + item.school + " average is " + x + " points higher.")
             elif testtype == "ACT":
                 if item.ACTscore <= ACTscore:
-                    return("Great job! You score among the average "+ item.school + " students!")
+                    return("Great job! Your ACT score is among the average "+ str(item.school) + " students!")
                 elif item.SATscore > ACTscore:
-                    return("You might want to improve your test score. The school average is " + y + " points higher.")
+                    return("You might want to improve your ACT score. The " + item.school + " average is " + y + " points higher.")
 
 def GPAAA(school, ACTscore, SATscore, GPA, testtype):
     for item in listofcolleges:
-        G = item.GPA - GPA
+        G = str(item.GPA - GPA)
         if item.school == school:
             if item.GPA <= GPA:
-                print("Great job! Your GPA is among the average "+ item.school + " students!")
+                return("Great job! Your GPA is among the average "+ item.school + " students!")
             elif item.GPA > GPA:
-                print("You might want to improve your GPA. The school average is " + G + " points higher.")
+                return("You might want to improve your GPA. The " + item.school + " average is " + G + " points higher.")

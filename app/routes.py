@@ -21,9 +21,8 @@ def collegecalculator():
     print(score)
     print(GPA)
 
-@app.route('/results')
-def results():
-        output = model.iterate(school, score, score, GPA, testtype)
-        return output
-        output2 = model.GPAAA(school, score, score, GPA, testtype)
-        return output2
+    output = model.iterate(school, score, score, GPA, testtype)
+    output2 = model.GPAAA(school, score, score, GPA, testtype)
+    print (output)
+    print (output2)
+    return render_template('results.html', school = school, GPA = GPA, output = output, output2 = output2)
